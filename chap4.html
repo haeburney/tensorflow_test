@@ -9,41 +9,19 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="images/icon1.ico">
-    <title>유기동물 입양</title>
+
+    <title>쉬운코딩 인공지능 강좌</title>
 </head>
 
 <body>
-  <nav class="main_list">
-      <div id="logo">
-        <a href="https://haeburney.github.io/AbandonedAnimal/"><img src="images/logo.png" alt="" width=50></a>
-        <a href=""></a>
-      </div>
-
-
-      <ul id="list_ul">
-        <li class="list_menu"><a href="https://haeburney.github.io/AbandonedAnimal/protectedAnimal.html">보호동물</a></li>
-        <li class="list_menu"><a href="https://haeburney.github.io/AbandonedAnimal/where.html">보호소</a></li>
-        <li class="list_menu"><a href="info.html">정보</a></li>
-        <li class="list_menu"><a href="https://haeburney.github.io/tensorflow_test/">사진으로 검색</a></li>
-      </ul>
-
-      <ul id="list_ul2">
-        <li class="list_login"><a href="https://haeburney.github.io/AbandonedAnimal/login.html">로그인</a></li>
-      </ul>
-    </nav>
-
-
-
-    <div class="container px-5">
-        <div class="row text-center py-5 px-5">
-            <div class="col py-5 px-5">
-                <h1>품종 검색하기</h1>
-                <p id="status">모델을 로딩중입니다. 잠시만 기다려주세요!</p>
+    <div class="container">
+        <div class="row text-center py-5">
+            <div class="col">
+                <h1>품종이 뭐니?</h1>
+                <p id="status">나의 모델을 로딩중입니다.</p>
                 <div class="spinner-border text-primary" id="loader">
                 </div>
-                <div class="card px-5">
+                <div class="card">
                     <img id="img"></img>
                     <div class="card-body">
                         <h1 id="result"></h1>
@@ -71,7 +49,7 @@
 
         tmImage.load(modelURL, metadataURL).then(model => {
             document.getElementById('loader').style.display = 'none';
-            document.getElementById('status').innerHTML = "로딩 완료"
+            document.getElementById('status').innerHTML = "나의 모델 로딩 완료"
 
             function run() {
                 model.predict(img).then(predictions => {
@@ -81,7 +59,7 @@
                 });
             }
 
-            img.src = "dog.png";
+            img.src = "dog.jpg";
 
             input.addEventListener('change', (e) => {
                 img.src = URL.createObjectURL(e.target.files[0]);
