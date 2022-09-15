@@ -9,6 +9,10 @@ body{
     font-size: 25px;
 }
 
+#result{
+    text-align: center;
+}
+
 #Button {
     margin-top: 30px;
     text-align: center;
