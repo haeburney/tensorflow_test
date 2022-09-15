@@ -11,6 +11,7 @@ body {
 
 #result {
     text-align: center;
+    
 }
 
 #Button {
@@ -20,6 +21,7 @@ body {
 }
 
 #webcam-container {
+    margin-top: 50px;
     text-align: center;
 }
 
