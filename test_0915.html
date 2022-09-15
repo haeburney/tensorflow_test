@@ -9,8 +9,11 @@
 </head>
 <body>
     <div id="title">카메라로 동물 검색하기</div>
-    <button type="button" onclick="init()">START</button>
+    <div id="Button">
+        <button type="button" onclick="init()">START</button>
+    </div>
     <div id="webcam-container"></div>
+    <h1 id="result"></h1>
     <div id="label-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
@@ -56,10 +59,20 @@
             window.requestAnimationFrame(loop);
         }
 
+        const result = document.getElementById('result');
+
         // run the webcam image through the image model
         async function predict() {
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
+
+            //내가 쓴 코드 
+
+            predictions.sort((a, b) => (b.probability - a.probability));
+            result.innerHTML = predictions[0].className + ' ' + parseInt(predictions[0].probability * 100) + '%';
+
+            //여기까지 내가 쓴 코드 
+
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
