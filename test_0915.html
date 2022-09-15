@@ -8,8 +8,31 @@
     <link rel="stylesheet" href="cam.css">
 </head>
 <body>
-    <div id="title">카메라로 동물 검색하기 test 1</div>
-    <button id="Button" type="button" onclick="init()">START</button>
+    <nav class="main_list">
+        <div id="logo">
+            <a href="https://haeburney.github.io/AbandonedAnimal/"><img src="images/logo.png" alt="" width=50></a>
+            <a href=""></a>
+        </div>
+    
+    
+        <ul id="list_ul">
+            <li class="list_menu"><a href="https://haeburney.github.io/AbandonedAnimal/protectedAnimal.html">보호동물</a></li>
+            <li class="list_menu"><a href="https://haeburney.github.io/AbandonedAnimal/where.html">보호소</a></li>
+            <li class="list_menu"><a href="info.html">정보</a></li>
+            <li class="list_menu"><a href="https://haeburney.github.io/tensorflow_test/">사진으로 검색</a></li>
+        </ul>
+    
+        <ul id="list_ul2">
+            <li class="list_login"><a href="https://haeburney.github.io/AbandonedAnimal/login.html">로그인</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="title">카메라로 동물 검색하기 ☆</div>
+    <div id="Button">
+        <button type="button" onclick="init()">START</button>
+    </div>
+    
     <div id="webcam-container"></div>
     <h1 id="result"></h1>
     <div id="label-container"></div>
