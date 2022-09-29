@@ -5,6 +5,11 @@
 노랑 #f2d298
 민트 #d6ece1
 */
+
+img{
+  width:50%;
+}
+
 .col{
   padding-left: 100px;
   padding-right: 100px;
