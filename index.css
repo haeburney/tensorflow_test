@@ -6,6 +6,10 @@
 민트 #d6ece1
 */
 
+.empty{
+  margin-top: 50px;
+}
+
 .menu{
   display: none;
 }
